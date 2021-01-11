@@ -1,0 +1,16 @@
+R 1120 720
+
+S ../textures/barrel.xpm
+NO ../textures/redbrick.xpm
+SO ../textures/bluestone.xpm
+WE ../textures/colorstone.xpm
+EA ../textures/wood.xpm
+
+C 0,225,243
+F 237,127,16
+
+111111111111
+100000020001
+1001100W0001
+100011002201
+111111111111
