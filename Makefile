@@ -1,4 +1,11 @@
-SRCNAME    =    
+SRCNAME    = 	parsing/parsing.c	\
+				srcs/main.c			\
+				usedata/directions.c\
+				usedata/res_sprite_rgb.c\
+				utils/utils1.c\
+				utils/gnl/get_next_line_utils.c\
+				utils/gnl/get_next_line.c
+
 
 SRCS    = ${SRCNAME}
 
@@ -11,22 +18,23 @@ RM        = rm -f
 CFLAGS    = -Wall -Wextra -Werror -I.
 
 .c.o:
-            ${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		
 ${NAME}:    ${OBJS}
-        make -C includes/mlx
-        cp includes/mlx/libmlx.dylib .
-        ${CC} -o ${NAME} ${OBJS} -L. -lmlx -framework OpenGL -framework AppKit
+		make -C utils/libft
+		make -C minilbx
+		cp minilbx/libmlx.dylib .
+		${CC} -o ${NAME} ${OBJS} -L./utils/libft -lft -L. -lmlx -framework OpenGL -framework AppKit
 
 all:         ${NAME}
 
 clean:
-            make -C includes/mlx clean
-            ${RM} ${OBJS} ${NAME}
+			make -C minilbx clean
+			${RM} ${OBJS} ${NAME}
 
 fclean:        clean
-            rm -f libmlx.dylib
-            ${RM} ${NAME}
+			rm -f libmlx.dylib
+			${RM} ${NAME}
 
 re:        fclean all
 
