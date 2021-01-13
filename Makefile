@@ -4,7 +4,8 @@ SRCNAME    = 	parsing/parsing.c	\
 				usedata/res_sprite_rgb.c\
 				utils/utils1.c\
 				utils/gnl/get_next_line_utils.c\
-				utils/gnl/get_next_line.c
+				utils/gnl/get_next_line.c \
+				verifmap/verifmap1.c
 
 
 SRCS    = ${SRCNAME}

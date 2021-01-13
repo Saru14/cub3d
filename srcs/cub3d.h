@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:38:14 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/12 17:02:21 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/13 19:24:23 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ typedef struct	s_data
 	int		f1;
 	int		f2;
 	int		f3;
+	int		parsed;
 	void	*mlx_ptr;
 	void	*mlx_win;
+	int		**map;
+	int		lignemap;
 }				t_data;
 
 void	ft_putstr_fd(char *s, int fd);
@@ -54,6 +57,8 @@ int		ft_flour(t_data *data, char *line);
 int		ft_ciel(t_data *data, char *line);
 int		ft_sprite(t_data *data, char *line);
 int		ft_resolution(t_data *data, char *line);
-int			ft_inset(int c, char *set);
+int		ft_inset(int c, char *set);
+int		ft_map(t_data *data, char *line);
+int		ft_verifmap(t_data *data);
 
 #endif

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   verifmap1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 16:37:49 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/13 14:30:08 by jbodson          ###   ########.fr       */
+/*   Created: 2021/01/13 19:20:39 by jbodson           #+#    #+#             */
+/*   Updated: 2021/01/13 19:35:34 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../srcs/cub3d.h"
 
-int main(int argc, char **argv)
+int		ft_verifmap(t_data *data)
 {
-	t_data *data;
-	data = (t_data*)malloc(sizeof(t_data));
-	if (!data)
-		return (0);
-	argc = 0;
-	if (argv[1])
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while(data->map[i][j])
 	{
-		get_data(data, argv[1]);
+		while(data->map[i][j])
+		{
+			printf("%d", data->map[i][j]);
+			j++;
+		}
+		i++;
+		printf("\n");
 	}
+	return 1;
 }
