@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:44:45 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/13 19:30:09 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/18 16:06:26 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,18 @@ int ft_parsing_data(char *line, t_data *data)
 	if (line[0] == 'F' && ft_isspace(line[1]))
 		return (ft_flour(data, &line[1]));
 	if (data->parsed == 8)
+	{
 		return (ft_map(data, &line[0]));
+	}
     return (1);
 }
 
 int	ft_map(t_data *data, char *line)
 {
 	int i;
-	int o;
-	int j;
 
-	o = 99;
+	
 	i = 0;
-	j = 0;
-	data->map = (int **)malloc(1000 * sizeof(int *));
-	while (o > 1)
-	{
-		data->map[j] = (int *)malloc(1000 * sizeof(int));
-		o--;
-		j++;
-	}
 	//printf("\n");
 	while (line[i] == ' ')
 	{
@@ -67,7 +59,7 @@ int	ft_map(t_data *data, char *line)
 		if (line[i] == '1')
 			data->map[i][data->lignemap] = 1;
 		else if (line[i] == '0')
-			data->map[i][data->lignemap] = 0;
+			data->map[i][data->lignemap] = 7;
 		else if (line[i] == '2')
 			data->map[i][data->lignemap] = 2;
 		else if (line[i] == 'N')
@@ -78,6 +70,8 @@ int	ft_map(t_data *data, char *line)
 			data->map[i][data->lignemap] = 5;
 		else if (line[i] == 'W')
 			data->map[i][data->lignemap] = 6;
+		else
+			data->map[i][data->lignemap] = 8;
 		//printf("%d", data->map[i][data->lignemap]);
 		i++;
 	}
@@ -92,7 +86,16 @@ int		get_data(t_data *data, char *file)
 	char	*line;
 	int i;
 	int j;
+	int u = 99;
+	int l = 0;
 
+	data->map = (int **)malloc(10000 * sizeof(int *));
+	while (u > 1)
+	{
+		data->map[l] = (int *)malloc(10000 * sizeof(int));
+		u--;
+		l++;
+	}
 	res = 0;
 	i = 0;
 	j = 0;

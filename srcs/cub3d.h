@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:38:14 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/13 19:24:23 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/18 17:32:22 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ int		ft_resolution(t_data *data, char *line);
 int		ft_inset(int c, char *set);
 int		ft_map(t_data *data, char *line);
 int		ft_verifmap(t_data *data);
+int		ft_verifcharacters(t_data *data);
+int		ft_veriffirstline(t_data *data);
+int		ft_veriflastline(t_data *data);
+int		ft_veriffirstcolumn(t_data *data);
+int		ft_veriflastcolumn(t_data *data);
 
 #endif
