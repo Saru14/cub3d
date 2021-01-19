@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:44:45 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/18 16:06:26 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/19 17:51:54 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,42 @@ int	ft_map(t_data *data, char *line)
 	
 	i = 0;
 	//printf("\n");
-	while (line[i] == ' ')
+	/*while (line[i] == ' ')
 	{
 		data->map[i][data->lignemap] = -1;
 		//printf("%d", data->map[i][data->lignemap]);
 		i++;
-	}
-	while(line[i] != ' ' && line[i] != '\0')
+	}*/
+	while(line[i] != '\0')
 	{
-		if (line[i] == '1')
+		if (line[i] == ' ')
+			data->map[i][data->lignemap] = -1;
+		else if (line[i] == '1')
 			data->map[i][data->lignemap] = 1;
 		else if (line[i] == '0')
 			data->map[i][data->lignemap] = 7;
 		else if (line[i] == '2')
 			data->map[i][data->lignemap] = 2;
 		else if (line[i] == 'N')
+		{
 			data->map[i][data->lignemap] = 3;
+			data->perso++;
+		}
 		else if (line[i] == 'S')
+		{
 			data->map[i][data->lignemap] = 4;
+			data->perso++;
+		}
 		else if (line[i] == 'E')
+		{
 			data->map[i][data->lignemap] = 5;
+			data->perso++;
+		}
 		else if (line[i] == 'W')
+		{
 			data->map[i][data->lignemap] = 6;
+			data->perso++;
+		}
 		else
 			data->map[i][data->lignemap] = 8;
 		//printf("%d", data->map[i][data->lignemap]);

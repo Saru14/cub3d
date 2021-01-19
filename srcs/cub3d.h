@@ -6,7 +6,7 @@
 /*   By: jbodson <jbodson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:38:14 by jbodson           #+#    #+#             */
-/*   Updated: 2021/01/18 17:32:22 by jbodson          ###   ########.fr       */
+/*   Updated: 2021/01/19 17:50:12 by jbodson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct	s_data
 	void	*mlx_win;
 	int		**map;
 	int		lignemap;
+	int		perso;
 }				t_data;
 
 void	ft_putstr_fd(char *s, int fd);
@@ -65,5 +66,7 @@ int		ft_veriffirstline(t_data *data);
 int		ft_veriflastline(t_data *data);
 int		ft_veriffirstcolumn(t_data *data);
 int		ft_veriflastcolumn(t_data *data);
+int		ft_verifholes(t_data *data);
+int		ft_verifspaces(t_data *data, int i, int j);
 
 #endif
